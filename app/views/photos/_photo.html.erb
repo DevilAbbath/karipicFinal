@@ -1,0 +1,14 @@
+<div id="<%= dom_id photo %>">
+  <% if photo.image.attached?%>
+    <%= image_tag photo.image, class: "w-100"%>
+  <% else %>
+    <img src="../assets/images/404.jpg">
+  <%end%>
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="display-6 ps-2"><%= photo.title %></h2>
+    <p class="pe-2 fst-italic mb-0 opacity-50"><%= photo.created_at.strftime("%Y, %b %d") %></p>  
+  </div>
+  <div class="ps-2">
+    <%= simple_format(photo.description) %>
+  </div>
+</div>
